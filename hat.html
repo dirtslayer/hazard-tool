@@ -1,0 +1,515 @@
+<html>
+<head>
+<!-- 
+
+
+
+
+-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+Hazard Assesment Tool
+</title>
+<style type="text/css">
+* {
+font-size:14px;
+}
+ul {
+list-style-type:none;
+}
+ul,li {
+margin:10px;
+padding:0;
+color: grey;
+}
+label>span {
+float:left;
+display: inline-block;
+width:150px;
+}
+input[type=text] {
+
+
+margin-bottom: 12px;
+background: transparent;
+	border: none;
+	border-bottom: 1px dashed grey;
+	width: 100%;
+	outline: none;
+	padding: 0px 0px 0px 0px;
+	font-size:16px;
+}
+
+</style>
+</head>
+<body>
+<h1>Hazard Assessment Tool</h1>
+
+<ol>
+<li>
+Job Info
+</li><li>
+Safety Info
+</li><li>
+General Roles
+</li><li>
+Hazard Checklist
+</li><li>
+Approvals 
+</li><li>
+Task, Hazard, Control, Ranking
+</li><li>
+Time Stamps
+</li></ol>
+
+<hr>
+<h2>Job Info</h2>
+<ul><li>
+<label for="workername">
+<span>Name</span><input type="text" name="workername"  />
+</label>
+</li><li>
+<label for="date">
+<span>Date</span><input type="text" name="date"  />
+</label>
+</li><li>
+<label for="supervisor">
+<span>Supervisor </span>
+<input type="text" name="supervisor"  />
+</label>
+</li><li>
+<label for="jobnumber">
+<span>Job #</span><input type="text" name="jobnumber"  />
+</label>
+
+</li><li>
+<label for="client">
+<span>Client</span><input type="text" name="client"  />
+</label>
+
+</li></ul>
+<h2>Safety Info </h2>
+<ul><li>
+<label for="location">
+<span>Location</span>
+<input type="text" name="location"  />
+</label>
+</li><li>
+<label for="safeworkpermits">
+<span>Safe Work Permits</span>
+<input type="text" name="safeworkpermits"  />
+</label>
+</li><li>
+<label for="grounddisturbance">
+<span>Ground Disturbance</span>
+<input type="text" name="grounddisturbance"  />
+</label>
+</li><li>
+<label for="confinedspace">
+<span>Confined Space</span>
+<input type="text" name="confinedspace"  />
+</label>
+</li><li>
+<label for="fallprotection">
+<span>Fall Protection </span>
+<input type="text" name="fallprotection"  />
+</label>
+</li><li>
+<label for="erp">
+<span>ERP</span>
+<input type="text" name="erp"  />
+</label>
+</li><li>
+<label for="firstaiders">
+<span>First Aiders</span>
+<input type="text" name="firstaiders"  />
+</label>
+</li><li>
+<label for="muster">
+<span>Muster</span>
+<input type="text" name="muster"  />
+</label>
+</li><li>
+<label for="weather">
+<span>Weather</span><input type="text" name="weather"  />
+</label>
+</li>
+
+
+
+<li>
+<input type="checkbox" 
+	name="fitforwork"
+	id="fitforwork" />
+<label for="fitforwork">
+Fit for work
+</label>
+</li>
+
+<li>
+<input type="checkbox" 
+	name="ppeinspected"
+	id="ppeinspected" />
+<label for="ppeinspected">
+PPE Inspected
+</label>
+</li>
+</ul>
+
+<h2>General Roles</h2>
+
+<ul><li>
+<li>
+<input type="checkbox" 
+	name="driver"
+	id="driver" />
+<label for="driver">
+Driver
+</label>
+
+</li><li>
+<input type="checkbox" 
+name="welder"
+ id="welder"/>
+ <label for="welder">
+Welder
+</label>
+</li><li>
+<input type="checkbox" 
+name="fitter"
+ id="fitter" />
+ <label for="fitter">
+Fitter
+</label>
+</li><li>
+<input type="checkbox" 
+name="labourer"
+ id="labourer" />
+ <label for="labourer">
+Labourer
+</label>
+</li><li>
+<input type="checkbox" 
+name="operator"
+ id="operator" />
+ <label for="operator">
+Operator
+</label>
+</li>
+
+<li>
+<input type="checkbox" 
+name="general"
+ id="general" />
+ <label for="general">
+General
+</label>
+</li>
+</ul>
+
+<h2> Hazards </h2>
+<ul id="generalhazards">
+General
+
+<li>
+<input type="checkbox"
+id=""
+name="" />
+<label for="">
+
+</label>
+</li>
+
+<li>
+<input type="checkbox"
+id=""
+name="" />
+<label for="">
+
+</label>
+</li>
+
+<li>
+<input type="checkbox"
+id=""
+name="" />
+<label for="">
+
+</label>
+</li>
+
+<li>
+<input type="checkbox"
+id=""
+name="" />
+<label for="">
+
+</label>
+</li>
+
+</ul><!-- generalhazards end -->
+
+<ul id="driverhazards" > Driver
+<!--
+<li>
+<input type="checkbox"
+id=""
+name="" />
+<label for="">
+
+</label>
+</li>
+-->
+
+<li>
+<input type="checkbox"
+id="inspection"
+name="inspection" />
+<label for="inspection">
+Inspection
+</label>
+</li>
+
+
+<li>
+<input type="checkbox"
+id="spotter"
+name="spotter" />
+<label for="spotter">
+Spotter
+</label>
+</li>
+
+
+<li>
+<input type="checkbox"
+id="traffic"
+name="traffic" />
+<label for="traffic">
+Traffic
+</label>
+</li>
+</ul>
+
+<ul id="welderhazards"> Welder
+<li>
+<input type="checkbox" 
+	name="fireextinguisher"
+	id="fireextinguisher" />
+<label for="fireextinguisher">
+fire extinguisher 
+</label>
+</li><li>
+<input type="checkbox"
+id="electricalcords"
+name="electricalcords" />
+<label for="electricalcords">
+electical cords
+</label>
+</li><li>
+<input type="checkbox"
+id="gaurds"
+name="gaurds" />
+<label for="gaurds">
+gaurds
+</label>
+</li><li>
+<input type="checkbox"
+id="flyingdebris"
+name="flyingdebris" />
+<label for="flyingdebris">
+flying debris
+</label>
+</li><li>
+<input type="checkbox"
+id="lighting"
+name="lighting" />
+<label for="lighting">
+lighting
+</label>
+</li><li>
+<input type="checkbox"
+id="dustfumes"
+name="dustfumes" />
+<label for="dustfumes">
+dust / fumes
+</label>
+</li><li>
+<input type="checkbox"
+id="h2s"
+name="h2s" />
+<label for="h2s">
+H2S
+</label>
+</li><li>
+<input type="checkbox"
+id="lels"
+name="lels" />
+<label for="lels">
+LELs
+</label>
+</li><li>
+
+</li>
+</ul>
+
+
+<!--
+workig alone
+
+Environmental
+
+Noise gt 85db
+Weather
+Housekeeping
+Spill Potential
+Dust / Fumes
+Lighting
+
+Equipment
+
+Spotter required
+Other Workers
+Moving equipment
+Inspections
+Fire Extinguisher
+
+Ground Disturbance
+
+Locate valid
+Daylight Pipe and cables
+Access and Egress
+Debris
+Slope
+
+Elecrical
+
+Overhead power lines
+Energized Equipment
+Cords on tools
+GFI
+
+Rigging
+
+Equipment inspection
+Tag lines
+slings inspected
+overhead hazards
+Spotter 
+Visibility
+Weather
+
+Ergonomic
+
+Stretching
+Tight spaces
+bending, twisting
+repetitive
+heavy
+reach
+slips, trips
+hands visible
+
+PPE
+
+FR clothing
+Side Impact Hardhat
+CSA boots
+Safety glasses
+Face shield
+Safety Goggles
+Ear plugs
+Ear muffs
+Hi Vis vest, gloves, wrist band
+Chemical suit
+Harness inspection
+Respirator mask
+SCBA SABA
+
+Safety
+
+Adequate training
+Barracades
+Signage
+Radio check
+Air Horn
+LOTO
+Shave
+Gas monitor
+
+
+
+
+
+
+
+-->
+
+<h2>Task Hazards</h2>
+<h2>Approvals </h2>
+
+
+<h2>Finalize </h2>
+
+<!--
+Area tidy
+Barricades
+Signage
+Incidents
+Near miss
+Where you injured
+Signout time
+Signout
+Submit to supervisor 
+
+-->
+<script type="text/javascript">
+
+
+/*
+
+var checkbox = document.getElementById("welder");
+checkbox.addEventListener('change', (event) => {
+  var welderhazard = document.getElementById("welderhazards");
+  if (event.target.checked) {
+    welderhazard.style.display = "block";
+  } else {
+    welderhazard.style.display = "none";
+  }
+});
+
+*/
+
+
+
+const buildtoggle = function(checkname)  {
+//alert(checkname);
+var checkbox = document.getElementById(checkname);
+var hazards = document.getElementById(checkname + "hazards");
+ hazards.style.display = "none";
+ 
+checkbox.addEventListener('change', (event) => {
+  var hazards = document.getElementById(checkname + "hazards");
+  if (event.target.checked) {
+    hazards.style.display = "block";
+    alert(checkname);
+  } else {
+    hazards.style.display = "none";
+    alert(checkname);
+  }
+});
+
+}
+
+
+
+buildtoggle("welder");
+buildtoggle("driver");
+buildtoggle("general");
+buildtoggle("fitter");
+buildtoggle("labourer");
+buildtoggle("operator");
+
+</script>
+</body>
+</html>
