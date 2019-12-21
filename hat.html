@@ -15,11 +15,14 @@ welder {
 -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-Hazard Assesment Tool
+Hazard Tool
 </title>
 <style type="text/css">
 * {
 font-size:14px;
+}
+div {
+  padding : 30px;
 }
 ul {
 list-style-type:none;
@@ -49,6 +52,7 @@ background: transparent;
 </style>
 </head>
 <body>
+  <div>
 <h1>Hazard Assessment Tool</h1>
 
 <ol>
@@ -57,8 +61,6 @@ Job Info
 </li><li>
 Safety Info
 </li><li>
-General Roles
-</li><li>
 Hazard Checklist
 </li><li>
 Approvals 
@@ -66,7 +68,12 @@ Approvals
 Task, Hazard, Control, Ranking
 </li><li>
 Time Stamps
-</li></ol>
+</li><li>
+  Print
+</li>
+
+</ol>
+
 
 <hr>
 <h2>Job Info</h2>
@@ -162,7 +169,7 @@ PPE Inspected
 </li>
 </ul>
 
-<h2>General Roles</h2>
+<h2>Hazard Checklist</h2>
 
 <ul><li>
 <li>
@@ -172,7 +179,48 @@ PPE Inspected
 <label for="driver">
 Driver
 </label>
-
+<ul id="driverhazards" >
+  <!--
+  <li>
+  <input type="checkbox"
+  id=""
+  name="" />
+  <label for="">
+  
+  </label>
+  </li>
+  -->
+  
+  <li>
+  <input type="checkbox"
+  id="inspection"
+  name="inspection" />
+  <label for="inspection">
+  Inspection
+  </label>
+  </li>
+  
+  
+  <li>
+  <input type="checkbox"
+  id="spotter"
+  name="spotter" />
+  <label for="spotter">
+  Spotter
+  </label>
+  </li>
+  
+  
+  <li>
+  <input type="checkbox"
+  id="traffic"
+  name="traffic" />
+  <label for="traffic">
+  Traffic
+  </label>
+  </li>
+  </ul>
+  
 </li><li>
 <input type="checkbox" 
 name="welder"
@@ -180,6 +228,70 @@ name="welder"
  <label for="welder">
 Welder
 </label>
+
+<ul id="welderhazards"> 
+  <li>
+  <input type="checkbox" 
+    name="fireextinguisher"
+    id="fireextinguisher" />
+  <label for="fireextinguisher">
+  fire extinguisher 
+  </label>
+  </li><li>
+  <input type="checkbox"
+  id="electricalcords"
+  name="electricalcords" />
+  <label for="electricalcords">
+  electical cords
+  </label>
+  </li><li>
+  <input type="checkbox"
+  id="gaurds"
+  name="gaurds" />
+  <label for="gaurds">
+  gaurds
+  </label>
+  </li><li>
+  <input type="checkbox"
+  id="flyingdebris"
+  name="flyingdebris" />
+  <label for="flyingdebris">
+  flying debris
+  </label>
+  </li><li>
+  <input type="checkbox"
+  id="lighting"
+  name="lighting" />
+  <label for="lighting">
+  lighting
+  </label>
+  </li><li>
+  <input type="checkbox"
+  id="dustfumes"
+  name="dustfumes" />
+  <label for="dustfumes">
+  dust / fumes
+  </label>
+  </li><li>
+  <input type="checkbox"
+  id="h2s"
+  name="h2s" />
+  <label for="h2s">
+  H2S
+  </label>
+  </li><li>
+  <input type="checkbox"
+  id="lels"
+  name="lels" />
+  <label for="lels">
+  LELs
+  </label>
+  </li><li>
+  
+  </li>
+  </ul>
+
+
 </li><li>
 <input type="checkbox" 
 name="fitter"
@@ -210,13 +322,10 @@ name="general"
  <label for="general">
 General
 </label>
-</li>
-</ul>
 
-<h2> Hazards </h2>
+
+
 <ul id="generalhazards">
-General
-
 <li>
 <input type="checkbox"
 id=""
@@ -246,122 +355,22 @@ name="" />
 
 <li>
 <input type="checkbox"
-id=""
-name="" />
-<label for="">
-
+id="workigalone"
+name="workigalone" />
+<label for="workigalone">
+Working Alone
 </label>
 </li>
 
 </ul><!-- generalhazards end -->
 
-<ul id="driverhazards" > Driver
-<!--
-<li>
-<input type="checkbox"
-id=""
-name="" />
-<label for="">
-
-</label>
-</li>
--->
-
-<li>
-<input type="checkbox"
-id="inspection"
-name="inspection" />
-<label for="inspection">
-Inspection
-</label>
-</li>
-
-
-<li>
-<input type="checkbox"
-id="spotter"
-name="spotter" />
-<label for="spotter">
-Spotter
-</label>
-</li>
-
-
-<li>
-<input type="checkbox"
-id="traffic"
-name="traffic" />
-<label for="traffic">
-Traffic
-</label>
-</li>
-</ul>
-
-<ul id="welderhazards"> Welder
-<li>
-<input type="checkbox" 
-	name="fireextinguisher"
-	id="fireextinguisher" />
-<label for="fireextinguisher">
-fire extinguisher 
-</label>
-</li><li>
-<input type="checkbox"
-id="electricalcords"
-name="electricalcords" />
-<label for="electricalcords">
-electical cords
-</label>
-</li><li>
-<input type="checkbox"
-id="gaurds"
-name="gaurds" />
-<label for="gaurds">
-gaurds
-</label>
-</li><li>
-<input type="checkbox"
-id="flyingdebris"
-name="flyingdebris" />
-<label for="flyingdebris">
-flying debris
-</label>
-</li><li>
-<input type="checkbox"
-id="lighting"
-name="lighting" />
-<label for="lighting">
-lighting
-</label>
-</li><li>
-<input type="checkbox"
-id="dustfumes"
-name="dustfumes" />
-<label for="dustfumes">
-dust / fumes
-</label>
-</li><li>
-<input type="checkbox"
-id="h2s"
-name="h2s" />
-<label for="h2s">
-H2S
-</label>
-</li><li>
-<input type="checkbox"
-id="lels"
-name="lels" />
-<label for="lels">
-LELs
-</label>
-</li><li>
-
 </li>
 </ul>
 
 
+
 <!--
-workig alone
+
 
 Environmental
 
@@ -455,8 +464,8 @@ Gas monitor
 <h2>Approvals </h2>
 
 
-<h2>Finalize </h2>
-
+<h2>Print </h2>
+</div>
 <!--
 Area tidy
 Barricades
@@ -489,7 +498,7 @@ checkbox.addEventListener('change', (event) => {
 
 
 const buildtoggle = function(checkname)  {
-//alert(checkname);
+
 var checkbox = document.getElementById(checkname);
 var hazards = document.getElementById(checkname + "hazards");
  hazards.style.display = "none";
@@ -498,10 +507,10 @@ checkbox.addEventListener('change', (event) => {
   var hazards = document.getElementById(checkname + "hazards");
   if (event.target.checked) {
     hazards.style.display = "block";
-    alert(checkname);
+
   } else {
     hazards.style.display = "none";
-    alert(checkname);
+   
   }
 });
 
