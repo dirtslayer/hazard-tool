@@ -53,19 +53,21 @@ background: transparent;
 </head>
 <body>
   <div>
-<h1>Hazard Assessment Tool</h1>
+<h1>Hazard Tool</h1>
 
 <ol>
 <li>
 Job Info
 </li><li>
+Permits
+</li><li>
 Safety Info
 </li><li>
 Hazard Checklist
 </li><li>
-Approvals 
-</li><li>
 Task, Hazard, Control, Ranking
+</li><li>
+Approvals 
 </li><li>
 Time Stamps
 </li><li>
@@ -101,36 +103,33 @@ Time Stamps
 </label>
 
 </li></ul>
+<h2>Permits</h2>
+<ul>
+
+	<li>
+	<label for="safeworkpermits">
+	<span>Safe Work Permits</span>
+	<input type="text" name="safeworkpermits"  />
+	</label>
+	</li>
+	<li>
+	<label for="grounddisturbance">
+	<span>Ground Disturbance</span>
+	<input type="text" name="grounddisturbance"  />
+	</label>
+	</li><li>
+	<label for="confinedspace">
+	<span>Confined Space</span>
+	<input type="text" name="confinedspace"  />
+	</label>
+	</li>
+
+</ul>
 <h2>Safety Info </h2>
 <ul><li>
 <label for="location">
 <span>Location</span>
 <input type="text" name="location"  />
-</label>
-</li><li>
-<label for="safeworkpermits">
-<span>Safe Work Permits</span>
-<input type="text" name="safeworkpermits"  />
-</label>
-</li><li>
-<label for="grounddisturbance">
-<span>Ground Disturbance</span>
-<input type="text" name="grounddisturbance"  />
-</label>
-</li><li>
-<label for="confinedspace">
-<span>Confined Space</span>
-<input type="text" name="confinedspace"  />
-</label>
-</li><li>
-<label for="fallprotection">
-<span>Fall Protection </span>
-<input type="text" name="fallprotection"  />
-</label>
-</li><li>
-<label for="erp">
-<span>ERP</span>
-<input type="text" name="erp"  />
 </label>
 </li><li>
 <label for="firstaiders">
@@ -167,6 +166,28 @@ Fit for work
 PPE Inspected
 </label>
 </li>
+
+<li>
+<input type="checkbox"
+ name="fallprotection"
+  id="fallprotection" />
+	
+<label for="fallprotection">
+<span>Fall Protection Plan </span>
+<input type="text" name="fallprotection"  />
+</label>
+</li><li>
+
+<label for="erp">
+<input type="checkbox"
+ name="erp"
+  id="erp" />
+<span>ERP</span>
+<input type="text" name="erp"  />
+</label>
+</li>
+
+
 </ul>
 
 <h2>Hazard Checklist</h2>
@@ -219,6 +240,19 @@ Driver
   Traffic
   </label>
   </li>
+  
+  
+  <li>
+  <input type="checkbox"
+  id="logbook"
+  name="logbook" />
+  <label for="logbook">
+  Log Book
+  </label>
+  </li>
+  
+  
+  
   </ul>
   
 </li><li>
@@ -463,8 +497,9 @@ Gas monitor
 <h2>Task Hazards</h2>
 <h2>Approvals </h2>
 
-
-<h2>Print </h2>
+<a href="#print" onClick="window.print();">
+<h2 id="print">Print </h2>
+</a>
 </div>
 <!--
 Area tidy
