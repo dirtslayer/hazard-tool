@@ -22,7 +22,7 @@ Hazard Tool
 font-size:14px;
 }
 div {
-  padding : 30px;
+  padding : 15px;
 }
 ul {
 list-style-type:none;
@@ -43,7 +43,7 @@ margin-bottom: 12px;
 background: transparent;
 	border: none;
 	border-bottom: 1px dashed grey;
-	width: 100%;
+	width: 80%;
 	outline: none;
 	padding: 0px 0px 0px 0px;
 	font-size:16px;
@@ -84,10 +84,34 @@ Time Stamps
 <span>Name</span><input type="text" name="workername"  />
 </label>
 </li><li>
+
+
+
+
 <label for="date">
-<span>Date</span><input type="text" name="date"  />
+<span>Date</span>
+<input type="text" id="datet"  />
+<a href="" onClick="setdate()" style="font-size:36px" >←</a>
 </label>
-</li><li>
+</li>
+
+
+<script src="js/moment.js"></script>
+<script type="text/javascript">
+
+
+const setdate = function()  {
+
+var datebox = document.getElementById(datet);
+var m = moment().format('MMMM Do YYYY, h:mm:ss a');
+datebox.value = m;
+}
+
+
+</script>
+
+
+<li>
 <label for="supervisor">
 <span>Supervisor </span>
 <input type="text" name="supervisor"  />
