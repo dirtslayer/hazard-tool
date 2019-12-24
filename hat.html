@@ -22,7 +22,7 @@ Hazard Tool
 font-size:14px;
 }
 div {
-  padding : 15px;
+  padding : 10px;
 }
 ul {
 list-style-type:none;
@@ -43,7 +43,7 @@ margin-bottom: 12px;
 background: transparent;
 	border: none;
 	border-bottom: 1px dashed grey;
-	width: 80%;
+	width: 90%;
 	outline: none;
 	padding: 0px 0px 0px 0px;
 	font-size:16px;
@@ -91,7 +91,7 @@ Time Stamps
 <label for="date">
 <span>Date</span>
 <input type="text" id="datet"  />
-<a href="" onClick="setdate()" style="font-size:36px" >←</a>
+<span onClick="setdate()" style="font-size:36px" >←</span>
 </label>
 </li>
 
@@ -102,8 +102,8 @@ Time Stamps
 
 const setdate = function()  {
 
-var datebox = document.getElementById(datet);
-var m = moment().format('MMMM Do YYYY, h:mm:ss a');
+var datebox = document.getElementById("datet");
+var m = moment().format('MMMM Do YYYY, h:mm a');
 datebox.value = m;
 }
 
@@ -350,27 +350,92 @@ Welder
   </ul>
 
 
-</li><li>
+</li>
+
+<li>
 <input type="checkbox" 
 name="fitter"
  id="fitter" />
  <label for="fitter">
 Fitter
 </label>
+<ul id="fitterhazards">
+<li>
+<input type="checkbox"
+id="loto"
+name="loto" />
+<label for="loto">
+Loto
+</label>
 </li><li>
+<input type="checkbox"
+id=""
+name="" />
+<label for="">
+
+</label>
+</li>
+
+</ul>
+
+</li>
+
+
+<li>
 <input type="checkbox" 
 name="labourer"
  id="labourer" />
  <label for="labourer">
 Labourer
 </label>
+
+<ul id="labourerhazards">
+<li>
+<input type="checkbox"
+id="slips"
+name="slips" />
+<label for="slips">
+Slips / Trips
+</label>
 </li><li>
+<input type="checkbox"
+id=""
+name="" />
+<label for="">
+
+</label>
+</li>
+</ul>
+</li>
+
+
+
+<li>
 <input type="checkbox" 
 name="operator"
  id="operator" />
  <label for="operator">
 Operator
 </label>
+
+<ul id="operatorhazards">
+<li>
+<input type="checkbox"
+id="spotter2"
+name="spotter2" />
+<label for="spotter2">
+Spotter
+</label>
+</li>
+<li>
+<input type="checkbox"
+id=""
+name="" />
+<label for="">
+
+</label>
+</li>
+</ul>
 </li>
 
 <li>
@@ -560,6 +625,9 @@ const buildtoggle = function(checkname)  {
 
 var checkbox = document.getElementById(checkname);
 var hazards = document.getElementById(checkname + "hazards");
+if ( hazards == null ) {
+alert(checkname)
+}
  hazards.style.display = "none";
  
 checkbox.addEventListener('change', (event) => {
