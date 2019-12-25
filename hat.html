@@ -32,26 +32,51 @@ margin:10px;
 padding:0;
 color: grey;
 }
-label>span {
-display: inline-block;
-width:150px;
-}
+
+
 input[type=text] {
 
 
 margin-bottom: 12px;
-background: transparent;
+
 	border: none;
 	border-bottom: 1px dashed grey;
-	width: 90%;
+	width: 100%;
 	outline: none;
 	padding: 0px 0px 0px 0px;
 	font-size:16px;
+	clear:both;
+	display:inline-block;
 }
 
 </style>
+
+
+<script type="text/javascript">
+
+hlist = {
+"driving" : [
+	"inspection",
+	"spotter",
+	"traffic"
+],
+"welding" : [
+	"flying debris",
+	"arc flash"
+]
+
+};
+
+function buildhl(){
+var hlu = document.getElementById("hlistul");
+alert("test");
+hlu.innerHTML = "<li>test</li>";
+
+}
+
+</script>
 </head>
-<body>
+<body onload="buildhl();">
   <div>
 <h1>Hazard Tool</h1>
 
@@ -91,7 +116,7 @@ Time Stamps
 <label for="date">
 <span>Date</span>
 <input type="text" id="datet"  />
-<span onClick="setdate()" style="font-size:36px" >←</span>
+<button onClick="setdate()" >now</button>
 </label>
 </li>
 
@@ -157,7 +182,7 @@ datebox.value = m;
 <span>Location</span>
 <input type="text" id="location"  />
 </label>
-</li>
+
 
 
 <script>
@@ -182,7 +207,7 @@ function getLocation() {
 
 </script>
 
-<span onclick="getLocation()">gps </span>
+<button onclick="getLocation()">gps</button>
 
 <script type="text/javascript">
 function openmap() {
@@ -205,12 +230,12 @@ else
 </script>
 
 
-<span onclick="openmap()"> map </span>
+<button onclick="openmap()">map</button>
 <!--
 https://maps.google.com/?q=<lat>,<lng>
 
 -->
-
+</li>
 <li>
 <label for="firstaiders">
 <span>First Aiders</span>
@@ -271,6 +296,10 @@ PPE Inspected
 </ul>
 
 <h2>Hazard Checklist</h2>
+
+<ul id="hlistul">
+
+</ul>
 
 <ul><li>
 <li>
