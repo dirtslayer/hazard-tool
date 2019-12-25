@@ -150,12 +150,68 @@ datebox.value = m;
 
 </ul>
 <h2>Safety Info </h2>
-<ul><li>
+<ul>
+
+<li>
 <label for="location">
 <span>Location</span>
-<input type="text" name="location"  />
+<input type="text" id="location"  />
 </label>
-</li><li>
+</li>
+
+
+<script>
+
+function showPosition(position) {
+
+var x = document.getElementById("location");
+  
+  x.value = position.coords.latitude + 
+  ", " + position.coords.longitude;
+}
+
+function getLocation() {
+
+  if (navigator.geolocation) {
+  
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.value = "Geolocation is not supported by this browser.";
+  }
+}
+
+</script>
+
+<span onclick="getLocation()">gps </span>
+
+<script type="text/javascript">
+function openmap() {
+
+var x = document.getElementById("location");
+
+if (!x.value.match(/\S/)) 
+{
+    alert("Field is blank");
+    return false;
+} 
+else 
+{
+ window.open("https://maps.google.com/?q=" + x.value );
+    return;
+
+}
+}
+
+</script>
+
+
+<span onclick="openmap()"> map </span>
+<!--
+https://maps.google.com/?q=<lat>,<lng>
+
+-->
+
+<li>
 <label for="firstaiders">
 <span>First Aiders</span>
 <input type="text" name="firstaiders"  />
@@ -198,7 +254,7 @@ PPE Inspected
 	
 <label for="fallprotection">
 <span>Fall Protection Plan </span>
-<input type="text" name="fallprotection"  />
+<input type="text" name="fallprotectiont"  />
 </label>
 </li><li>
 
@@ -207,7 +263,7 @@ PPE Inspected
  name="erp"
   id="erp" />
 <span>ERP</span>
-<input type="text" name="erp"  />
+<input type="text" name="erpt"  />
 </label>
 </li>
 
@@ -219,12 +275,12 @@ PPE Inspected
 <ul><li>
 <li>
 <input type="checkbox" 
-	name="driver"
-	id="driver" />
-<label for="driver">
-Driver
+	name="driving"
+	id="driving" />
+<label for="driving">
+Driving
 </label>
-<ul id="driverhazards" >
+<ul id="drivinghazards" >
   <!--
   <li>
   <input type="checkbox"
@@ -281,13 +337,13 @@ Driver
   
 </li><li>
 <input type="checkbox" 
-name="welder"
- id="welder"/>
- <label for="welder">
-Welder
+name="welding"
+ id="welding"/>
+ <label for="welding">
+Welding
 </label>
 
-<ul id="welderhazards"> 
+<ul id="weldinghazards"> 
   <li>
   <input type="checkbox" 
     name="fireextinguisher"
@@ -354,12 +410,12 @@ Welder
 
 <li>
 <input type="checkbox" 
-name="fitter"
- id="fitter" />
- <label for="fitter">
-Fitter
+name="fitting"
+ id="fitting" />
+ <label for="fitting">
+Pipe Fitting
 </label>
-<ul id="fitterhazards">
+<ul id="fittinghazards">
 <li>
 <input type="checkbox"
 id="loto"
@@ -383,13 +439,13 @@ name="" />
 
 <li>
 <input type="checkbox" 
-name="labourer"
- id="labourer" />
- <label for="labourer">
-Labourer
+name="labour"
+ id="labour" />
+ <label for="labour">
+Labour
 </label>
 
-<ul id="labourerhazards">
+<ul id="labourhazards">
 <li>
 <input type="checkbox"
 id="slips"
@@ -412,13 +468,13 @@ name="" />
 
 <li>
 <input type="checkbox" 
-name="operator"
- id="operator" />
- <label for="operator">
-Operator
+name="operating"
+ id="operating" />
+ <label for="operating">
+Equipment Operating
 </label>
 
-<ul id="operatorhazards">
+<ul id="operatinghazards">
 <li>
 <input type="checkbox"
 id="spotter2"
@@ -645,12 +701,12 @@ checkbox.addEventListener('change', (event) => {
 
 
 
-buildtoggle("welder");
-buildtoggle("driver");
+buildtoggle("welding");
+buildtoggle("driving");
 buildtoggle("general");
-buildtoggle("fitter");
-buildtoggle("labourer");
-buildtoggle("operator");
+buildtoggle("fitting");
+buildtoggle("labour");
+buildtoggle("operating");
 
 </script>
 </body>
