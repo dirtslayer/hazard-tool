@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>test hazard list</title>
+
+
 <script type="text/javascript" src="js/YConsole.js"></script>
 <script type="text/javascript" src="js/hazardlist.js"></script>
 <script type="text/javascript" src="js/checklist.js"></script>
@@ -9,5 +15,19 @@
   <ul id="hlistul">
   
   </ul>
+  
+  <script type="text/javascript">
+  
+  
+  YConsole.activate();
+  console.log("first intercepted log.");
+  YConsole.docking="bottom";
+  YConsole.MAX_LOG_ARRAY_LENGTH=80;
+  YConsole.MAX_LOG_STR_LENGTH=300;
+ 
+  YConsole.show();
+  
+  </script>
+  
   
  </body>
