@@ -9,7 +9,6 @@ hazardlist = {
 ],
 
 "Welding" : [
-	"Fire Extinguisher",
 	"Electrical Cords",
 	"Guards",
 	"Flying Debris",
@@ -18,6 +17,7 @@ hazardlist = {
 
 "Fitting" : [
 	"Ladders",
+	"Pinch Points",
 	"Tool Bag",
 	"Scaffold"
 ],
@@ -31,17 +31,23 @@ hazardlist = {
 	"Lighting"
 ],
 
+"Confined Space" : [
+	"Lighting",
+	"Fit Test",
+	"Ventilation",
+	"Rescue Watch"
+],
+
 "Equipment" : [
 	"Spotter required",
 	"Other Workers",
 	"Moving equipment",
-	"Inspections",
-	"Fire Extinguisher"
+	"Inspections"
 ],
 
 "Ground Disturbance" : [
-	"Locate valid",
-	"Daylight Pipe and Cables",
+	"Locates",
+	"Daylights",
 	"Access and Egress",
 	"Flying Debris",
 	"Slope"
@@ -79,14 +85,13 @@ hazardlist = {
 
 "PPE" : [
 	"FR Clothing",
-	"Side Impact Hardhat",
-	"CSA boots",
-	"Safety glasses",
-	"Face shield",
+	"Hardhat Glasses Gloves",
+	"CSA Boots",
+	"Face Shield",
 	"Goggles",
-	"Ear plugs",
-	"Ear muffs",
-	"Hi Vis - Vest / Gauntlet",
+	"Ear Plugs",
+	"Ear Muffs",
+	"Vest Gauntlet",
 	"Chemical Suit",
 	"Harness",
 	"Respirator Mask",
@@ -94,14 +99,15 @@ hazardlist = {
 ],
 
 "Safety" : [
-	"Adequate training",
+	"Training",
 	"Barricades" ,
 	"Signage",
 	"Radio check",
 	"Air Horn",
 	"LOTO",
 	"Shave",
-	"Gas monitor"
+	"Fire Extinguisher",
+	"Gas monitor"	
 ]
 
 }
