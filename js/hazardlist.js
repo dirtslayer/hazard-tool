@@ -88,7 +88,7 @@ hazardlist = {
 
 "Safety" : [
 	"Adequate training",
-	"Barracades" ,
+	"Barricades" ,
 	"Signage",
 	"Radio check",
 	"Air Horn",
@@ -97,4 +97,4 @@ hazardlist = {
 	"Gas monitor"
 ]
 
-};
+}
