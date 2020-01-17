@@ -27,8 +27,6 @@ const buildtoggle = function(checkname)  {
     });
 }
 
-
-
 function buildhl(parentEleId,hlist){
 
 	var hlu = document.getElementById(parentEleId);
