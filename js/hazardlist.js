@@ -19,7 +19,7 @@ hazardlist = {
 "Fitting" : [
 	"Ladders",
 	"Tool Bag",
-	"Scaffold",
+	"Scaffold"
 ],
 
 "Environmental" : [
