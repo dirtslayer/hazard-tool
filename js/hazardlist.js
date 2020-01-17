@@ -7,12 +7,19 @@ hazardlist = {
 	"Traffic",
 	"Log Book"
 ],
+
 "Welding" : [
-	"Fire Extinguisher",
 	"Electrical Cords",
-	"Gaurds",
+	"Guards",
 	"Flying Debris",
 	"Arc Flash"
+],
+
+"Fitting" : [
+	"Ladders",
+	"Pinch Points",
+	"Tool Bag",
+	"Scaffold"
 ],
 
 "Environmental" : [
@@ -24,23 +31,29 @@ hazardlist = {
 	"Lighting"
 ],
 
+"Confined Space" : [
+	"Lighting",
+	"Fit Test",
+	"Ventilation",
+	"Rescue Watch"
+],
+
 "Equipment" : [
 	"Spotter required",
 	"Other Workers",
 	"Moving equipment",
-	"Inspections",
-	"Fire Extinguisher"
+	"Inspections"
 ],
 
 "Ground Disturbance" : [
-	"Locate valid",
-	"Daylight Pipe & Cables",
+	"Locates",
+	"Daylights",
 	"Access and Egress",
 	"Flying Debris",
 	"Slope"
 ],
 
-"Elecrical" : [
+"Electrical" : [
 	"Overhead Power Lines",
 	"Energized Equipment",
 	"Cords",
@@ -72,29 +85,29 @@ hazardlist = {
 
 "PPE" : [
 	"FR Clothing",
-	"Side Impact Hardhat",
-	"CSA boots",
-	"Safety glasses",
-	"Face shield",
+	"Hardhat Glasses Gloves",
+	"CSA Boots",
+	"Face Shield",
 	"Goggles",
-	"Ear plugs",
-	"Ear muffs",
-	"Hi Vis - Vest Gauntlet",
-	"Chemical suit",
-	"Harness inspection",
-	"Respirator mask",
+	"Ear Plugs",
+	"Ear Muffs",
+	"Vest Gauntlet",
+	"Chemical Suit",
+	"Harness",
+	"Respirator Mask",
 	"SCBA SABA"
 ],
 
 "Safety" : [
-	"Adequate training",
-	"Barracades" ,
+	"Training",
+	"Barricades" ,
 	"Signage",
 	"Radio check",
 	"Air Horn",
 	"LOTO",
 	"Shave",
-	"Gas monitor"
+	"Fire Extinguisher",
+	"Gas monitor"	
 ]
 
-};
+}

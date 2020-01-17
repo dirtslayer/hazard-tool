@@ -292,56 +292,6 @@ Signout
 Submit to supervisor 
 
 -->
-<script type="text/javascript">
 
-
-/*
-
-var checkbox = document.getElementById("welder");
-checkbox.addEventListener('change', (event) => {
-  var welderhazard = document.getElementById("welderhazards");
-  if (event.target.checked) {
-    welderhazard.style.display = "block";
-  } else {
-    welderhazard.style.display = "none";
-  }
-});
-
-*/
-
-
-
-const buildtoggle = function(checkname)  {
-
-var checkbox = document.getElementById(checkname);
-var hazards = document.getElementById(checkname + "hazards");
-if ( hazards == null ) {
-alert(checkname)
-}
- hazards.style.display = "none";
- 
-checkbox.addEventListener('change', (event) => {
-  var hazards = document.getElementById(checkname + "hazards");
-  if (event.target.checked) {
-    hazards.style.display = "block";
-
-  } else {
-    hazards.style.display = "none";
-   
-  }
-});
-
-}
-
-
-
-buildtoggle("welding");
-buildtoggle("driving");
-buildtoggle("general");
-buildtoggle("fitting");
-buildtoggle("labour");
-buildtoggle("operating");
-
-</script>
 </body>
 </html>
