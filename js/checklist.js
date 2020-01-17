@@ -1,31 +1,33 @@
 
-
+function makeid(k) {
+	return k.replace(/\s/g, "");
+}
 
 const buildtoggle = function(checkname)  {
+    var checkbox = document.getElementById(makeid(checkname));
+    var hazards = document.getElementById(makeid(checkname) + "hazards");
 
-var checkbox = document.getElementById(checkname);
-var hazards = document.getElementById(checkname + "hazards");
-
-if ( checkbox == null ) {
-	console.log(checkname);
-}
-if ( hazards == null ) {
-	console.log(checkname);
-}
- hazards.style.display = "none";
- 
-checkbox.addEventListener('change', (event) => {
-  var hazards = document.getElementById(checkname + "hazards");
-  if (event.target.checked) {
-    hazards.style.display = "block";
-
-  } else {
+    if ( checkbox == null ) {
+	    console.log(checkname);
+    }
+    if ( hazards == null ) {
+	    console.log(checkname);
+    }
     hazards.style.display = "none";
-   
-  }
-});
-
+    checkbox.addEventListener('change', (event) => {
+        var chazards = document.getElementById(makeid(checkname) + "hazards");
+        if ( chazards == null) {
+        	console.log(checkname);
+        }
+        if (event.target.checked) {
+            hazards.style.display = "block";
+        } else {
+            hazards.style.display = "none";
+        }
+    });
 }
+
+
 
 function buildhl(parentEleId,hlist){
 
@@ -36,17 +38,17 @@ function buildhl(parentEleId,hlist){
 		htmlul += `<li> \
 		 <input type='checkbox' \
 		 name='${key}' \
-		 id='${key}' /> \
-		 <label for='${key}' >\
+		 id='${makeid(key)}' /> \
+		 <label for='${makeid(key)}' >\
 		 ${key} \
-		 </label><ul id="${key}hazards">`;
+		 </label><ul id="${makeid(key)}hazards">`;
 		 	
 		for ( var prop of Object.keys(hlist[key])) {
 
 			htmlul += "<li>" ;			
 			k = hlist[key][prop];		
 			htmlul += `<input type="checkbox" \
-			id= ${k} \
+			id= ${makeid(k)} \
 			name= ${k} /> \
 			<label for= ${k} > \
 			${k} \

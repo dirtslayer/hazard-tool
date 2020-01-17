@@ -34,7 +34,7 @@ hazardlist = {
 
 "Ground Disturbance" : [
 	"Locate valid",
-	"Daylight Pipe & Cables",
+	"Daylight Pipe and Cables",
 	"Access and Egress",
 	"Flying Debris",
 	"Slope"
