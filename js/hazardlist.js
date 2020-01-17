@@ -7,12 +7,19 @@ hazardlist = {
 	"Traffic",
 	"Log Book"
 ],
+
 "Welding" : [
 	"Fire Extinguisher",
 	"Electrical Cords",
-	"Gaurds",
+	"Guards",
 	"Flying Debris",
 	"Arc Flash"
+],
+
+"Fitting" : [
+	"Ladders",
+	"Tool Bag",
+	"Scaffold",
 ],
 
 "Environmental" : [
@@ -40,7 +47,7 @@ hazardlist = {
 	"Slope"
 ],
 
-"Elecrical" : [
+"Electrical" : [
 	"Overhead Power Lines",
 	"Energized Equipment",
 	"Cords",
@@ -79,10 +86,10 @@ hazardlist = {
 	"Goggles",
 	"Ear plugs",
 	"Ear muffs",
-	"Hi Vis - Vest Gauntlet",
-	"Chemical suit",
-	"Harness inspection",
-	"Respirator mask",
+	"Hi Vis - Vest / Gauntlet",
+	"Chemical Suit",
+	"Harness",
+	"Respirator Mask",
 	"SCBA SABA"
 ],
 
