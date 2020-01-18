@@ -22,6 +22,7 @@ var origpadh = "200px";
 
 function showpad() {
 	spaddiv.style.height = origpadh;
+	signaturePad.clear();
 /*	signaturePad = new SignaturePad(canvas, {
 	backgroundColor: 'rgb(255, 255, 255)'
 	});

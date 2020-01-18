@@ -1,7 +1,5 @@
 <html>
 <head>
-
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
 Hazard Tool
@@ -10,9 +8,7 @@ Hazard Tool
 * {
 font-size:14px;
 }
-div {
-  padding : 10px;
-}
+
 ul {
 list-style-type:none;
 }
@@ -21,13 +17,8 @@ margin:10px;
 padding:0;
 color: grey;
 }
-
-
 input[type=text] {
-
-
 margin-bottom: 12px;
-
 	border: none;
 	border-bottom: 1px dashed grey;
 	width: 100%;
@@ -40,13 +31,27 @@ margin-bottom: 12px;
 
 </style>
 
-
 <script type="text/javascript" src="js/hazardlist.js"></script>
 <script type="text/javascript" src="js/checklist.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+<script type="text/javascript" src="js/sign.js"></script>
 
+<style type="text/css">
+#outter {
+box-sizing: border-box;
+border : 5px solid #f2f2f3
+}
+.sig {
+box-sizing: border-box;
+border : 5px solid white
+display : inline;
+padding-right : 5px;
+padding-bottom : 5px;
+}
+</style>
 </head>
 
-<body onload="buildhl('hlistul',hazardlist);">
+<body onload="buildhl('hlistul',hazardlist);setuppad();">
   
   <div>
 <h1>Hazard Tool</h1>
@@ -154,22 +159,16 @@ datebox.value = m;
 <input type="text" id="location"  />
 </label>
 
-
-
 <script>
 
 function showPosition(position) {
-
-var x = document.getElementById("location");
-  
-  x.value = position.coords.latitude + 
-  ", " + position.coords.longitude;
+	var x = document.getElementById("location");
+	x.value = position.coords.latitude + 
+  	", " + position.coords.longitude;
 }
 
 function getLocation() {
-
-  if (navigator.geolocation) {
-  
+  if (navigator.geolocation) { 
     navigator.geolocation.getCurrentPosition(showPosition);
   } else { 
     x.value = "Geolocation is not supported by this browser.";
@@ -219,10 +218,14 @@ https://maps.google.com/?q=<lat>,<lng>
 </label>
 </li><li>
 <label for="weather">
-<span>Weather</span><input type="text" name="weather"  />
+<span></span>
+
+<script type="text/javascript" src="js/weather.js"></script>
+<button onclick="getWeather()">Weather</button>
+<pre id="weatherresult"></pre>
+<input type="text" name="weather"  />
 </label>
 </li>
-
 
 
 <li>
@@ -276,6 +279,18 @@ PPE Inspected
 <h2>Task Hazards</h2>
 <h2>Approvals </h2>
 
+<div id="outter" style="background:#f2f2f2; margin:5px" >
+<div id="sigs"><img src="img/signhere.jpg" id="00" class="sig" height="40px" width="120px" /></div>
+<div id="spad">
+  <canvas id="signature-pad" class="signature-pad" 
+  width="360px" height="120px"
+  style="outline: #4CAF50 solid 1px;">
+  </canvas>
+<button id="clear">Clear</button>
+<button id="setimg">Sign</button>
+</div>
+</div>
+
 <a href="#print" onClick="window.print();">
 <h2 id="print">Print </h2>
 </a>
@@ -292,6 +307,56 @@ Signout
 Submit to supervisor 
 
 -->
+<script type="text/javascript">
 
+
+/*
+
+var checkbox = document.getElementById("welder");
+checkbox.addEventListener('change', (event) => {
+  var welderhazard = document.getElementById("welderhazards");
+  if (event.target.checked) {
+    welderhazard.style.display = "block";
+  } else {
+    welderhazard.style.display = "none";
+  }
+});
+
+*/
+
+
+
+const buildtoggle = function(checkname)  {
+
+var checkbox = document.getElementById(checkname);
+var hazards = document.getElementById(checkname + "hazards");
+if ( hazards == null ) {
+alert(checkname)
+}
+ hazards.style.display = "none";
+ 
+checkbox.addEventListener('change', (event) => {
+  var hazards = document.getElementById(checkname + "hazards");
+  if (event.target.checked) {
+    hazards.style.display = "block";
+
+  } else {
+    hazards.style.display = "none";
+   
+  }
+});
+
+}
+
+
+
+buildtoggle("welding");
+buildtoggle("driving");
+buildtoggle("general");
+buildtoggle("fitting");
+buildtoggle("labour");
+buildtoggle("operating");
+
+</script>
 </body>
 </html>

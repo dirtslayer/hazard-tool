@@ -1,39 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>test sign</title>
-
-
-
 <script type="text/javascript" src="js/YConsole.js"></script>
-
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
-</head>
-
 <script type="text/javascript" src="js/sign.js"></script>
 <style type="text/css">
 #outter {
 box-sizing: border-box;
-
 border : 5px solid #f2f2f3
 }
 .sig {
 box-sizing: border-box;
 border : 5px solid white
 display : inline;
-}
-#spad {
-
+padding-right : 5px;
 }
 </style>
+</head>
 <body onload="setuppad();">
 <div id="outter" style="background:#f2f2f2; margin:5px" >
-
-<div id="sigs"><img src="img/signhere.jpg" id="00" class="sig" height="40px" width="120px" style="background-color: grey"/></div>
-
+<div id="sigs"><img src="img/signhere.jpg" id="00" class="sig" height="40px" width="120px" /></div>
 <div id="spad">
   <canvas id="signature-pad" class="signature-pad" 
   width="360px" height="120px"
@@ -42,21 +30,14 @@ display : inline;
 <button id="clear">Clear</button>
 <button id="setimg">Sign</button>
 </div>
-
 </div>
-
 <script type="text/javascript">
-  
-  
-   YConsole.activate();
+  YConsole.activate();
   console.log("first intercepted log.");
   YConsole.docking="bottom";
   YConsole.MAX_LOG_ARRAY_LENGTH=80;
   YConsole.MAX_LOG_STR_LENGTH=300;
- 
-  YConsole.show();
-  
-  </script>
-
+  YConsole.show(); 
+</script>
 </body>
 </html>

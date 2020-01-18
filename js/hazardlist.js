@@ -23,6 +23,7 @@ hazardlist = {
 ],
 
 "Environmental" : [
+	"Weather",
 	"Noise gt 85db",
 	"Weather",
 	"Housekeeping",

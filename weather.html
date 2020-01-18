@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>weather test</title>
+</head>
+<body>
+<script type="text/javascript" src="js/YConsole.js"></script>
+
+<script type="text/javascript" src="js/weather.js"></script>
+<button onclick="getWeather()">Weather</button>
+<pre id="weatherresult"></pre>
+
+<script type="text/javascript">
+  YConsole.activate();
+  console.log("first intercepted log.");
+  YConsole.docking="bottom";
+  YConsole.MAX_LOG_ARRAY_LENGTH=80;
+  YConsole.MAX_LOG_STR_LENGTH=300;
+  YConsole.show(); 
+</script>
+
+</body>
+</html>
