@@ -13,80 +13,73 @@ function resizeCanvas() {
 
 var canvas = null;
 var signaturePad = null;
+var spaddiv = null;
+var currentsig = '0';
+var sigs = null;
+var origpadh = "200px";
+
+
+
+function showpad() {
+	spaddiv.style.height = origpadh;
+/*	signaturePad = new SignaturePad(canvas, {
+	backgroundColor: 'rgb(255, 255, 255)'
+	});
+	resizeCanvas();*/
+}
+function hidepad(){
+	spaddiv.style.height = "0px"; 
+	spaddiv.style.overflow = "hidden";
+}
+
+function showsigele(ele) {
+	ele.style.height = "40px";
+}
+function hidesigele(ele) {
+	ele.style.height = "0px"; 
+	ele.style.overflow = "hidden";
+}
+
 
 function setuppad() {
 
-console.log('setuppad');
-
-canvas = document.getElementById('signature-pad');
-
-
-//window.onresize = resizeCanvas;
-// resizeCanvas();
-
-  signaturePad = new SignaturePad(canvas, {
-  backgroundColor: 'rgb(255, 255, 255)' // necessary for saving image as JPEG; can be removed is only saving as PNG or SVG
-});
-/*
-document.getElementById('save-png').addEventListener('click', function () {
-  if (signaturePad.isEmpty()) {
-    return alert("Please provide a signature first.");
-  }
-  
-  var data = signaturePad.toDataURL('image/png');
-  console.log(data);
-  window.open(data);
-});
-
-document.getElementById('save-jpeg').addEventListener('click', function () {
-  if (signaturePad.isEmpty()) {
-    return alert("Please provide a signature first.");
-  }
-
-  var data = signaturePad.toDataURL('image/jpeg');
-  console.log(data);
-  window.open(data);
-});
-
-document.getElementById('save-svg').addEventListener('click', function () {
-  if (signaturePad.isEmpty()) {
-    return alert("Please provide a signature first.");
-  }
-
-  var data = signaturePad.toDataURL('image/svg+xml');
-  console.log(data);
-  console.log(atob(data.split(',')[1]));
-  window.open(data);
-});
-*/
-document.getElementById('clear').addEventListener('click', function () {
-  signaturePad.clear();
-});
-/*
-document.getElementById('draw').addEventListener('click', function () {
-  var ctx = canvas.getContext('2d');
-  console.log(ctx.globalCompositeOperation);
-  ctx.globalCompositeOperation = 'source-over'; // default value
-});
-
-document.getElementById('erase').addEventListener('click', function () {
-  var ctx = canvas.getContext('2d');
-  ctx.globalCompositeOperation = 'destination-out';
-});
-*/
-document.getElementById('setimg').addEventListener('click', function () {
-	
-	if (signaturePad.isEmpty()) {
-	return alert("Please provide a signature first.");
-	}
-	
-	var data = signaturePad.toDataURL('image/png');
+	canvas = document.getElementById('signature-pad');
+	sigs = document.getElementById('sigs');
+	spaddiv = document.getElementById('spad');
 	
 	
-	document.getElementById('sig').setAttribute(
-        'src', data);
-});
+	sigele = document.getElementById(currentsig);
+	sigele.addEventListener('click', function () {
+		hidesigele(this);
+		showpad();
+	});
+	
+	//window.onresize = resizeCanvas;
+	// resizeCanvas();
 
+	signaturePad = new SignaturePad(canvas, {
+		backgroundColor: 'rgb(255, 255, 255)'
+	 });
 
+	document.getElementById('clear').addEventListener('click', function () {
+		signaturePad.clear();
+	});
+
+	document.getElementById('setimg').addEventListener('click', function () {	
+		if (signaturePad.isEmpty()) {
+			document.getElementById(currentsig).setAttribute(
+			'src', "img/signhere.jpg");
+		} else {	
+			var data = signaturePad.toDataURL('image/png');	
+			var cursigele = document.getElementById(currentsig);
+			cursigele.setAttribute('src', data);
+			showsigele(cursigele);
+			hidepad();
+		
+			
+		}
+	});
+
+hidepad();
 
 }
