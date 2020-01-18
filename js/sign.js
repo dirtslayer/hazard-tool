@@ -14,7 +14,7 @@ function resizeCanvas() {
 var canvas = null;
 var signaturePad = null;
 var spaddiv = null;
-var currentsig = '0';
+var currentsig = '00';
 var sigs = null;
 var origpadh = "200px";
 
@@ -33,13 +33,36 @@ function hidepad(){
 }
 
 function showsigele(ele) {
-	ele.style.height = "40px";
-}
-function hidesigele(ele) {
-	ele.style.height = "0px"; 
-	ele.style.overflow = "hidden";
+	sigs.childNodes.forEach(
+		function (lele) {
+			lele.style.height = "40px";
+		});
 }
 
+function hidesigele(ele) {
+	sigs.childNodes.forEach( function (lele) {
+	console.log('hide '+ typeof lele + "-" + lele);
+		lele.style.height = "0px"; 
+		lele.style.overflow = "hidden";
+		
+	});
+	currentsig = ele.id;
+}
+
+function addnewsigele() {
+	nsigs = sigs.childNodes.length -1;
+	lastsigid = Number(sigs.childNodes[nsigs].id);
+	if (lastsigid == Number(currentsig)) {
+		newNode = sigs.childNodes[0].cloneNode();
+		newNode.id = lastsigid + 1;
+		newNode.setAttribute('src', "img/signhere.jpg");
+		sigs.appendChild(newNode);
+		newNode.addEventListener('click', function () {
+		hidesigele(this);
+		showpad();
+		});
+	}
+}
 
 function setuppad() {
 
@@ -75,6 +98,7 @@ function setuppad() {
 			cursigele.setAttribute('src', data);
 			showsigele(cursigele);
 			hidepad();
+			addnewsigele();
 		
 			
 		}

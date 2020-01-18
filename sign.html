@@ -7,9 +7,9 @@
 <title>test sign</title>
 
 
-<!--
+
 <script type="text/javascript" src="js/YConsole.js"></script>
--->
+
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
 </head>
 
@@ -31,9 +31,9 @@ display : inline;
 </style>
 <body onload="setuppad();">
 <div id="outter" style="background:#f2f2f2; margin:5px" >
-<div id="sigs">
-<img src="img/signhere.jpg" id="0" class="sig" height="40px" width="120px" style="background-color: grey"/>
-</div>
+
+<div id="sigs"><img src="img/signhere.jpg" id="00" class="sig" height="40px" width="120px" style="background-color: grey"/></div>
+
 <div id="spad">
   <canvas id="signature-pad" class="signature-pad" 
   width="360px" height="120px"
@@ -48,13 +48,13 @@ display : inline;
 <script type="text/javascript">
   
   
-  // YConsole.activate();
-  // console.log("first intercepted log.");
-  // YConsole.docking="bottom";
-  // YConsole.MAX_LOG_ARRAY_LENGTH=80;
- // YConsole.MAX_LOG_STR_LENGTH=300;
+   YConsole.activate();
+  console.log("first intercepted log.");
+  YConsole.docking="bottom";
+  YConsole.MAX_LOG_ARRAY_LENGTH=80;
+  YConsole.MAX_LOG_STR_LENGTH=300;
  
-  // YConsole.show();
+  YConsole.show();
   
   </script>
 
