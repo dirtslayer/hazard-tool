@@ -22,6 +22,8 @@ function setglatlon(position) {
 		if (this.readyState == 4 && this.status == 200) {
 		// var myArr = JSON.parse(this.responseText);
 		formatjson(this.responseText);
+	} else {
+	console.log(this.responseText);
 	}
 	};
 	
