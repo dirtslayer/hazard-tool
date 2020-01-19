@@ -13,12 +13,12 @@ function setglatlon(position) {
 	glon = position.coords.longitude;
 		
 	xmlhttp = new XMLHttpRequest();
-	url = `http://api.openweathermap.org/data/2.5/weather?lat=${glat}&lon=${glon}&appid=07654c3e586dd616d29667ab64903644`;
+	url = `https://api.openweathermap.org/data/2.5/weather?lat=${glat}&lon=${glon}&appid=07654c3e586dd616d29667ab64903644`;
 	
 	console.log(url);
 	
 	xmlhttp.onreadystatechange = function() {
-		console.log('onreadystatechange');
+		console.log('reply wdatta');
 		if (this.readyState == 4 && this.status == 200) {
 		// var myArr = JSON.parse(this.responseText);
 		formatjson(this.responseText);
